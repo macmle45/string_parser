@@ -7,13 +7,16 @@ vector<int> parseInts(string str) {
 	// Complete this function
     stringstream ss(str);
     char commas;
-    int n, str_n;
+    int n;
+
+    //vector array for parsed integers from string
     vector<int> parsed_integers;
 
-    ss >> n >> commas;
-    parsed_integers.push_back(n);
-
-//    str_n = static_cast<char>(n);
+    // retrieve data from string stream in while loop
+    while (ss >> n) {
+        parsed_integers.push_back(n);
+        ss >> commas;
+    }
 
     return parsed_integers;
 }
